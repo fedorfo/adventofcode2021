@@ -1,10 +1,8 @@
-from typing import Optional
-
 import utils
 
 
 def main():
-    with utils.init_stdin_stdout("day1.in", "day1_2.out") as (stdin, stdout):
+    with utils.open_input_file(day=1) as stdin:
         previous_list: list[int] = []
         increments = 0
         while stdin.readable():
@@ -18,7 +16,7 @@ def main():
                 previous_list = current_list
             else:
                 previous_list.append(current)
-        stdout.write(f"{increments}")
+        print(increments)
 
 
 main()

@@ -1,6 +1,5 @@
-from typing import Optional
-
 import utils
+
 
 def filter_tokens(tokens: list[str], position: int, sign: int) -> list[str]:
     if len(tokens) == 1:
@@ -22,7 +21,7 @@ def filter_tokens(tokens: list[str], position: int, sign: int) -> list[str]:
 
 
 def main():
-    with open(f"inputs/day3.in", "r") as stdin:
+    with utils.open_input_file(day=3) as stdin:
         tokens = []
         while stdin.readable():
             current = next(utils.read_tokens(stdin, str), None)
@@ -37,9 +36,7 @@ def main():
             oxygen = filter_tokens(oxygen, i, 1)
             co2 = filter_tokens(co2, i, -1)
 
-        print(
-            f"{int(oxygen[0], 2)*int(co2[0], 2)}\n"
-        )
+        print(int(oxygen[0], 2) * int(co2[0], 2))
 
 
 main()

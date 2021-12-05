@@ -4,7 +4,7 @@ import utils
 
 
 def main():
-    with utils.init_stdin_stdout("day1.in", "day1_1.out") as (stdin, stdout):
+    with utils.open_input_file(day=1) as stdin:
         previous: Optional[int] = None
         increments = 0
         while stdin.readable():
@@ -14,7 +14,7 @@ def main():
             if previous is not None and current > previous:
                 increments += 1
             previous = current
-        stdout.write(f"{increments}")
+        print(increments)
 
 
 main()

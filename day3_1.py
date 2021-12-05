@@ -1,10 +1,8 @@
-from typing import Optional
-
 import utils
 
 
 def main():
-    with open(f"inputs/day3.in", "r") as stdin:
+    with utils.open_input_file(day=3) as stdin:
         tokens = []
         while stdin.readable():
             current = next(utils.read_tokens(stdin, str), None)
@@ -28,7 +26,7 @@ def main():
                 gamma += "1"
                 epsilon += "0"
 
-        print(f"{int(gamma, 2)*int(epsilon, 2)}\n")
+        print(int(gamma, 2) * int(epsilon, 2))
 
 
 main()
