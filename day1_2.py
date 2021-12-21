@@ -5,7 +5,7 @@ def main():
     with utils.open_input_file(day=1) as stdin:
         previous_list: list[int] = []
         increments = 0
-        while stdin.readable():
+        while True:
             current = next(utils.read_tokens(stdin, int), None)
             if current is None:
                 break

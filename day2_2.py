@@ -15,7 +15,7 @@ def get_shift(current_aim: int, direction: str, length: int) -> tuple[int, int, 
 def main():
     x, y, aim = 0, 0, 0
     with utils.open_input_file(day=2) as stdin:
-        while stdin.readable():
+        while True:
             tokens = [*utils.read_tokens(stdin, str)]
             if not tokens:
                 break

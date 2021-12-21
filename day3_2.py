@@ -23,7 +23,7 @@ def filter_tokens(tokens: list[str], position: int, sign: int) -> list[str]:
 def main():
     with utils.open_input_file(day=3) as stdin:
         tokens = []
-        while stdin.readable():
+        while True:
             current = next(utils.read_tokens(stdin, str), None)
             if not current:
                 break
