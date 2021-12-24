@@ -1,5 +1,3 @@
-import numpy
-
 import utils
 
 dice_rolls = 0
