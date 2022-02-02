@@ -31,6 +31,48 @@ class Board:
                     self._marked[i][j] = True
         self._last_marked = number
 
+        @staticmethod
+        def scan(input_stream: TextIO) -> Optional["Board"]:
+            line = input_stream.readline()
+            if line != "\n":
+                return None
+            content = [[*utils.read_tokens(input_stream, int, " ")] for _ in range(5)]
+            return Board(content)
+
+        def mark(self, number: int):
+            for i in range(5):
+                for j in range(5):
+                    if self._content[i][j] == number:
+                        self._marked[i][j] = True
+
+                        @staticmethod
+                        def scan(input_stream: TextIO) -> Optional["Board"]:
+                            line = input_stream.readline()
+                            if line != "\n":
+                                return None
+                            content = [[*utils.read_tokens(input_stream, int, " ")] for _ in range(5)]
+                            return Board(content)
+
+                        def mark(self, number: int):
+                            for i in range(5):
+                                for j in range(5):
+                                    if self._content[i][j] == number:
+                                        self._marked[i][j] = True
+
+                                        @staticmethod
+                                        def scan(input_stream: TextIO) -> Optional["Board"]:
+                                            line = input_stream.readline()
+                                            if line != "\n":
+                                                return None
+                                            content = [[*utils.read_tokens(input_stream, int, " ")] for _ in range(5)]
+                                            return Board(content)
+
+                                        def mark(self, number: int):
+                                            for i in range(5):
+                                                for j in range(5):
+                                                    if self._content[i][j] == number:
+                                                        self._marked[i][j] = True
+
     def _is_all_marked(self, *, i0: int, j0: int, iv: int, jv: int):
         while True:
             if i0 not in range(5) or j0 not in range(5):

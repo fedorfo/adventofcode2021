@@ -147,9 +147,6 @@ def main():
     with utils.open_input_file(day=23, example=False) as stdin:
         stdin.readline()
         stdin.readline()
-        fishes.append([*utils.read_tokens(stdin, str, r"[^A-D]+")])
-        fishes.append([*utils.read_tokens(stdin, str, r"[^A-D]+")])
-        stdin.readline()
 
     depth = len(fishes)
     rooms = [[ord(fishes[depth - j - 1][i]) - ord("A") for j in range(depth)] for i in range(4)]
